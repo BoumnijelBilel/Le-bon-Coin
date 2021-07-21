@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration - Menu{% endblock %}
+
+{% block body %}
+
+    <h1>
+        Administration - Menu principal
+    </h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h2>
+                Utilisateurs
+            </h2>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-primary" href="{{ path('admin_user_index') }}">Consulter</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h2>
+                Annonces
+            </h2>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-primary" href="{{ path('admin_post_index') }}">Consulter</a>
+        </div>
+    </div>
+
+{% endblock %}

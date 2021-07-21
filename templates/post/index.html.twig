@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    <h1>Annonce : {{ post.title}}</h1>
+
+    <div class="card">
+        <div class="card-body">
+            {{ post.description }}
+        </div>
+    </div>
+
+    <h3>Auteur : {{ post.author.firstName }} {{ post.author.lastName }}</h3>
+
+    <a class="btn btn-secondary" href="{{ path('home') }}">Retour à l'accueil</a>
+{% endblock %}

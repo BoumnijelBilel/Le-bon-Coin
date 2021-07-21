@@ -1,0 +1,23 @@
+App\Entity\User:
+  user{0..99}:
+    username (unique): '<username()>'
+    email: '<email()>'
+    password: '\$2y\$13\$7YqU3p2yOLQMSV9FC5FfruVQzXIyXzOigxUWH9WMBYidujWfqAB4C'
+    firstName: '<firstName()>'
+    lastName: '<lastName()>'
+
+  admin:
+    username: 'admin'
+    email: 'admin@therightcorner.com'
+    password: '\$2y\$13\$EgI0a5sQhOnIg37xnp/Bfe1X2HMhTxXjJ8iUf8ngaKZzzvkfENGr2'
+    firstName: 'Admin'
+    lastName: 'ADMIN'
+    roles: [ 'ROLE_ADMIN' ]
+
+App\Entity\Post:
+  post{1..25}:
+    title: '<sentence(5, true)>'
+    description: '80%? <paragraphs(2, true)>'
+    publishedAt: '<dateTimeThisMonth()>'
+    author: '@user*'
+

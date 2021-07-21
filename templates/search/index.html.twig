@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheRightCorner - Recherche{% endblock %}
+
+{% block body %}
+
+    {% if searched %}
+        <h1>
+            Résultat de la recherche pour : {{ searched }}
+        </h1>
+
+        <div class="row gy-4">
+        {% if posts is not empty %}
+            {% for post in posts %}
+                <div class="col-md-6 col-xl-4">
+                    <div class="card h-100">
+                        {{ include('common/post.html.twig') }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <h3>Aucune annonce trouvé.</h3>
+            </div>
+        {% endif %}
+        </div>
+    {% else %}
+
+    <div class="card m-1">
+        <div class="card-header">
+            <h3>Rechercher une annonce</h3>
+        </div>
+        <div class="card-body">
+            <form class="form-inline d-flex" action="{{ path('search') }}" method="get" >
+                <input id="search" class="form-control mr-sm-2" name="search_query" type="search" placeholder="Recherchez une annonce..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+        </div>
+    </div>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<div class="card h-100">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        {% if post.description is not empty %}
+            <p class="card-text">
+                {{ post.description }}
+            </p>
+        {% endif %}
+    </div>
+    <div class="card-footer">
+        <a href="{{ path('post', {id : post.id}) }}" class="btn btn-primary">Voir l'annonce</a>
+    </div>
+</div>

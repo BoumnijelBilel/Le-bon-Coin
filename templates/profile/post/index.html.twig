@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheRightCorner - Mes annonces{% endblock %}
+
+{% block body %}
+    <div class="m-1">
+        <h1>Mes annonces :</h1>
+    </div>
+
+    <div class="row gy-4">
+        {% if posts is not empty %}
+            {% for post in posts %}
+                <div class="col-md-6 col-xl-4">
+                    <div class="card h-100">
+                        {{ include('common/post.html.twig') }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <h3>Aucune annonce pour le moment.</h3>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
